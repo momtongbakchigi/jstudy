@@ -77,17 +77,17 @@
 // 원시값을 할당한 변수를 다른 변수에 할당하는 것이 깊은 복사, 객체를 할당한 변수를 다른 변수에 할당하는 것이 얕은 복사
 
 //예제 11-16~18 참조에 의한 전달
-var person = {
-    name: 'Lee'
-};
+// var person = {
+//     name: 'Lee'
+// };
 
-var copy = person;
-console.log(copy);
+// var copy = person;
+// console.log(copy);
 
-//복사하면 원본의 참조 값(할당된 곳의 주소값)이 복사되어 전달 : 두개의 식별자가 하나의 객체를 공유
+// //복사하면 원본의 참조 값(할당된 곳의 주소값)이 복사되어 전달 : 두개의 식별자가 하나의 객체를 공유
 
-copy.name = 'Kim';
-copy.addres = 'Incheon';
+// copy.name = 'Kim';
+// copy.addres = 'Incheon';
 
-console.log(person);
-console.log(copy);
+// console.log(person);
+// console.log(copy);
