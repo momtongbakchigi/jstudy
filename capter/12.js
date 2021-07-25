@@ -166,20 +166,168 @@ const { functionsIn } = require("lodash");
 // console.log(num);// 값 자체 복사
 // console.log(person);// 원본이 회손되고 참조 값 복사
 
-// 다양한 함수의 형태 (예제 12-34~)
+// 다양한 함수의 형태 (예제 12-34~42)
 
-// 즉시 실행 함수 
+// 즉시 실행 함수 = 반드시 그룹 연산자로 감싸야 함
 // 익명 즉시 실행 함수
-(function () {
-    var a = 3;
-    var b = 5;
-    return a*b;
-}());
-// 기명 즉시 실행 함수
-(function foo() {
-    var a = 3;
-    var b = 5;
-    return a*b;
-}());
+// (function () {
+//     var a = 3;
+//     var b = 5;
+//     return a*b;
+// }());
+// // 기명 즉시 실행 함수
+// (function foo() {
+//     var a = 3;
+//     var b = 5;
+//     return a*b;
+// }());
 
-foo();
+// foo();
+
+// (function () {
+//     //
+// }());
+
+// (function () {
+//     //
+// })();
+
+// !function () {
+//     //
+// }();
+
+// +function () {
+//     //
+// }();
+
+// var res = (function () {
+//     var a = 3;
+//     var b = 5;
+//     return a*b;
+// }());
+
+// console.log(res);
+
+// res = (function (a,b) {
+//     return a*b;
+// }(4,6));
+
+// console.log(res);
+
+// 재귀함수 (예제 12-43~)
+// 반복문
+// function countdown(n) {
+//     for(var i =n; i>=0;i--) console.log(i);
+// }
+
+// countdown(10);
+// // 재귀 함수
+// function countdown1(n) {
+//     if(n<0) return;
+//     console.log(n);
+//     countdown(n - 1);
+// }
+
+// countdown(3);
+// //재귀 
+// function factorial(n) {
+//     if(n<=1) return 1;
+//     return n*factorial(n-1);
+// }
+
+// console.log(factorial(5));
+
+// // 한정적 재귀 함수
+// function factorial1(n) {
+//     if(n<=1) return 1;
+
+//     var res = n;
+//     while(--n) res *= n;
+//     return res;
+// }
+
+// console.log(factorial1(6))
+
+// 콜백 함수 (예제 12-49)
+
+// function repeat(n) {
+//     for(var i = 0; i < n; i++) console.log(i);
+// }
+
+// repeat(5);
+
+// function repeat2(n){
+//     for(var i =0; i <n; i++) {
+//         if(i%2) console.log(i);
+//     }
+// }
+
+// repeat2(6)
+
+// function repeat(n,f) {
+//     for(var i=0; i < n; i++){
+//         f(i);
+//     }
+// }//고차함수
+
+// var logAll = function (i) {
+//     console.log(i);
+// };//콜백함수
+
+// repeat(5, logAll);
+
+// var logOdds = function (i) {
+//     if (i%2) console.log(i);
+// };
+
+// repeat(6,logOdds);
+
+// document.getElementById('myButton').addEventListener('clcik', function(){
+//     console.log('button clicked');
+// });
+
+// setTimeout(function () {
+//     console.log('1초 경과');
+// }, 1000);
+
+// var res = [1,2,3].map(function (item) {
+//     return item*2;
+// });
+
+// console.log(res);
+
+// res = [1,2,3].filter(function (item) {
+//     return item % 2;
+// });
+
+// console.log(res);
+
+// res = [1,2,3].reduce(function (acc,cur) {
+//     return acc + cur;
+// }, 0);
+
+// console.log(res);
+
+// 순수 함수와 비순수 함수 (예제 12-56~)
+
+// var count = 0;
+
+// function increase(n) {
+//     return ++n;
+// }
+
+// count = increase(count);
+// console.log(count);
+
+// count = increase(count);
+// console.log(count);
+
+// function increase() {
+//     return ++count;
+// }
+
+// increase();
+// console.log(count);
+
+// increase();
+// console.log(count);
