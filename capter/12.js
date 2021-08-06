@@ -1,8 +1,6 @@
 //함수
 //예제 12-1~3
 
-const { functionsIn } = require("lodash");
-
 // const { functionsIn } = require("lodash");
 
 // function add(x,y) {
